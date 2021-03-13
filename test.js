@@ -1,9 +1,12 @@
-function Person () {
-    this.name = 'alex'
+let a = {
+    type: 'red',
+    getType: function() {
+        return this.type
+    }
 }
 
-Person.prototype.color = 'red';
+let b = a.getType;
 
-const person1 = new Person();
-console.log(Person.constructor.toString());
-
+let c = b.bind(a)
+console.log(b());
+console.log(c());
